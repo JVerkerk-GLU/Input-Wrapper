@@ -1,12 +1,9 @@
 ﻿using System;
 using UnityEngine;
-using UnityEngine.InputSystem;
-using UnityEngine.InputSystem.Controls;
-using UnityEngine.InputSystem.LowLevel;
 
 namespace GLU.Input
 {
-    public class Gamepad
+    public static class Gamepad
     {
         private static UnityEngine.InputSystem.Gamepad Device => UnityEngine.InputSystem.Gamepad.current ??
                                                                  throw new NullReferenceException(
@@ -37,22 +34,42 @@ namespace GLU.Input
 
         #endregion
 
+        #region --- Triggers ---
+
+        /// <summary>
+        /// Gets the current accentuation of the left trigger, 0 being completely released and 1 being completely pressed
+        /// </summary>
+        public static float LeftTrigger => Device.leftTrigger.ReadValue();
+        
+        /// <summary>
+        /// Gets the current accentuation of the right trigger, 0 being completely released and 1 being completely pressed
+        /// </summary>
+        public static float RightTrigger => Device.leftTrigger.ReadValue();
+
+        #endregion
+
         #region --- Buttons ---
 
         /// <summary>
         /// Returns whether the given key is currently being pressed
         /// </summary>
-        public static bool GetButton(GamepadButton button) => Events.Try(() => Device[button].isPressed, EVENT_ERROR);
+        public static bool GetButton(UnityEngine.InputSystem.LowLevel.GamepadButton button) => Events.Try(() => Device[button].isPressed, EVENT_ERROR);
+        /// <inheritdoc cref="GetButton(UnityEngine.InputSystem.LowLevel.GamepadButton)"/>
+        public static bool GetButton(GamepadButton button) => GetButton((UnityEngine.InputSystem.LowLevel.GamepadButton)button);
         
         /// <summary>
         /// Returns whether the given key was pressed in the current frame
         /// </summary>
-        public static bool GetButtonPressed(GamepadButton button) => Events.Try(() => Device[button].wasPressedThisFrame, EVENT_ERROR);
+        public static bool GetButtonPressed(UnityEngine.InputSystem.LowLevel.GamepadButton button) => Events.Try(() => Device[button].wasPressedThisFrame, EVENT_ERROR);
+        /// <inheritdoc cref="GetButtonPressed(UnityEngine.InputSystem.LowLevel.GamepadButton)"/>
+        public static bool GetButtonPressed(GamepadButton button) => GetButtonPressed((UnityEngine.InputSystem.LowLevel.GamepadButton)button);
         
         /// <summary>
         /// Returns whether the given key was released in the current frame
         /// </summary>
-        public static bool GetButtonReleased(GamepadButton button) => Events.Try(() => Device[button].wasReleasedThisFrame, EVENT_ERROR);
+        public static bool GetButtonReleased(UnityEngine.InputSystem.LowLevel.GamepadButton button) => Events.Try(() => Device[button].wasReleasedThisFrame, EVENT_ERROR);
+        /// <inheritdoc cref="GetButtonReleased(UnityEngine.InputSystem.LowLevel.GamepadButton)"/>
+        public static bool GetButtonReleased(GamepadButton button) => GetButtonReleased((UnityEngine.InputSystem.LowLevel.GamepadButton)button);
 
         #endregion
         

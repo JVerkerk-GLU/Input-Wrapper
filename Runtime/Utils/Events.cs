@@ -2,9 +2,9 @@
 
 namespace GLU.Input
 {
-    internal class Events
+    internal static class Events
     {
-        public static T Try<T>(Func<T> callback, string errorMessage)
+        internal static T Try<T>(Func<T> callback, string errorMessage)
         {
             try
             {

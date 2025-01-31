@@ -4,7 +4,7 @@
 
 namespace GLU.Input
 {
-    public enum MouseButtonId
+    public enum MouseButton
     {
         /// <summary>
         /// Left mouse button.

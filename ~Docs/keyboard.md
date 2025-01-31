@@ -48,7 +48,7 @@ A wrapper around keyboard input allowing the polling of key presses.
 <table>
     <tbody>
         <tr>
-            <td><a href="./Keyboard/KeyId.md">KeyId</a></td>
+            <td><a href="./Keyboard/Key.md">KeyId</a></td>
             <td>A named list of all keyboard keys available for input</td>
         </tr>
     </tbody>

@@ -4,12 +4,11 @@
 ---
 ***Syntax***
 ```csharp
-public static bool GetKeyPressed(KeyId key)
 public static bool GetKeyPressed(Key key)
 ```
 
 ## Description
-Returns whether the given key associated with the given `key` of type [KeyId](./KeyId.md) was pressed during the current frame.
+Returns whether the given key associated with the parameter `key` of type [Key](./Key.md) was pressed during the current frame.
 
 ```csharp
 public void Update()

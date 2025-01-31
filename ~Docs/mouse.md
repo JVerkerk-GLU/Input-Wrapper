@@ -56,7 +56,7 @@ A wrapper around mouse input allowing the polling of mouse button presses and mo
 <table>
     <tbody>
         <tr>
-            <td><a href="./Mouse/MouseButtonId.md">MouseButtonId</a></td>
+            <td><a href="./Mouse/MouseButton.md">MouseButtonId</a></td>
             <td>A named list of all mouse buttons available for input</td>
         </tr>
     </tbody>

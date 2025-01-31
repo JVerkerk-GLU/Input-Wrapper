@@ -4,12 +4,11 @@
 ---
 ***Syntax***
 ```csharp
-public static bool GetButton(MouseButtonId button)
 public static bool GetButton(MouseButton button)
 ```
 
 ## Description
-Returns whether the given button associated with the given `button` of type [MouseButtonId](./MouseButtonId.md) is currently being pressed.
+Returns whether the given button associated with the parameter `button` of type [MouseButton](./MouseButton.md) is currently being pressed.
 
 ```csharp
 public void Update()

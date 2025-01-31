@@ -32,7 +32,7 @@ namespace GLU.Input.Examples
             _textField.text = $"Mouse Position: {Mouse.Position.ToString("F0")}{Environment.NewLine}Left Mouse Button: Change Colors";
             
             // Check if the left-mouse button was pressed this frame
-            if (Mouse.GetButtonPressed(MouseButton.Left))
+            if (Mouse.GetButtonPressed(UnityEngine.InputSystem.LowLevel.MouseButton.Left))
             {
                 // Loop through the colors
                 _textField.color = COLORS[++_currentColor % COLORS.Length];

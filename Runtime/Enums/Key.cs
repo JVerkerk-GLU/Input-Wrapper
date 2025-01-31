@@ -4,7 +4,7 @@
 
 namespace GLU.Input
 {
-    public enum KeyId
+    public enum Key
     {
         /// <summary>
         /// Invalid key. Does not represent a key on the keyboard and is only used to have a

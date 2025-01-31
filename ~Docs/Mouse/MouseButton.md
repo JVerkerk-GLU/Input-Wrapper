@@ -1,10 +1,10 @@
-﻿# enum MouseButtonId
+﻿# enum MouseButton
 *namespace:* [GLU.Input.Mouse](../mouse.md)
 
 ---
 ***Syntax***
 ```csharp
-public enum MouseButtonId
+public enum MouseButton
 ```
 
 ## Fields

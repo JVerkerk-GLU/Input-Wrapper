@@ -1,7 +1,6 @@
 ﻿using System;
 using UnityEngine;
 using UnityEngine.InputSystem.Controls;
-using UnityEngine.InputSystem.LowLevel;
 
 namespace GLU.Input
 {
@@ -9,15 +8,15 @@ namespace GLU.Input
     {
         private static UnityEngine.InputSystem.Mouse Device => UnityEngine.InputSystem.Mouse.current ?? throw new NullReferenceException("[<color=#ff0000>There doesn't seem to be a mouse present</color>]");
 
-        private static ButtonControl ParseButton(MouseButton button)
+        private static ButtonControl ParseButton(UnityEngine.InputSystem.LowLevel.MouseButton button)
         {
             return button switch
             {
-                MouseButton.Left => Device.leftButton,
-                MouseButton.Right => Device.rightButton,
-                MouseButton.Middle => Device.middleButton,
-                MouseButton.Forward => Device.forwardButton,
-                MouseButton.Back => Device.backButton,
+                UnityEngine.InputSystem.LowLevel.MouseButton.Left => Device.leftButton,
+                UnityEngine.InputSystem.LowLevel.MouseButton.Right => Device.rightButton,
+                UnityEngine.InputSystem.LowLevel.MouseButton.Middle => Device.middleButton,
+                UnityEngine.InputSystem.LowLevel.MouseButton.Forward => Device.forwardButton,
+                UnityEngine.InputSystem.LowLevel.MouseButton.Back => Device.backButton,
                 _ => throw new ArgumentOutOfRangeException(nameof(button), button,
                     "[<color=#ff0000>Invalid 'MouseButton' value</color>]")
             };
@@ -28,35 +27,41 @@ namespace GLU.Input
         /// <summary>
         /// Returns whether the given mouse button is currently being pressed
         /// </summary>
-        public static bool GetButton(MouseButton button)
+        public static bool GetButton(UnityEngine.InputSystem.LowLevel.MouseButton button)
         {
             ButtonControl control = ParseButton(button);
             return control.isPressed;
         }
         /// <inheritdoc cref="GetButton(UnityEngine.InputSystem.LowLevel.MouseButton)"/>
-        public static bool GetButton(MouseButtonId button) => GetButton((MouseButton)button);
+        public static bool GetButton(MouseButton button) => GetButton((UnityEngine.InputSystem.LowLevel.MouseButton)button);
+        /// <inheritdoc cref="GetButton(UnityEngine.InputSystem.LowLevel.MouseButton)"/>
+        public static bool GetButton(int button) => GetButton((UnityEngine.InputSystem.LowLevel.MouseButton)button);
         
         /// <summary>
         /// Returns whether the given mouse button was pressed during the current frame
         /// </summary>
-        public static bool GetButtonPressed(MouseButton button)
+        public static bool GetButtonPressed(UnityEngine.InputSystem.LowLevel.MouseButton button)
         {
             ButtonControl control = ParseButton(button);
             return control.wasPressedThisFrame;
         }
         /// <inheritdoc cref="GetButtonPressed(UnityEngine.InputSystem.LowLevel.MouseButton)"/>
-        public static bool GetButtonPressed(MouseButtonId button) => GetButtonPressed((MouseButton)button);
+        public static bool GetButtonPressed(MouseButton button) => GetButtonPressed((UnityEngine.InputSystem.LowLevel.MouseButton)button);
+        /// <inheritdoc cref="GetButtonPressed(UnityEngine.InputSystem.LowLevel.MouseButton)"/>
+        public static bool GetButtonPressed(int button) => GetButtonPressed((UnityEngine.InputSystem.LowLevel.MouseButton)button);
         
         /// <summary>
         /// Returns whether the given mouse button was released during the current frame
         /// </summary>
-        public static bool GetButtonReleased(MouseButton button)
+        public static bool GetButtonReleased(UnityEngine.InputSystem.LowLevel.MouseButton button)
         {
             ButtonControl control = ParseButton(button);
             return control.wasReleasedThisFrame;
         }
         /// <inheritdoc cref="GetButtonReleased(UnityEngine.InputSystem.LowLevel.MouseButton)"/>
-        public static bool GetButtonReleased(MouseButtonId button) => GetButtonReleased((MouseButton)button);
+        public static bool GetButtonReleased(MouseButton button) => GetButtonReleased((UnityEngine.InputSystem.LowLevel.MouseButton)button);
+        /// <inheritdoc cref="GetButtonReleased(UnityEngine.InputSystem.LowLevel.MouseButton)"/>
+        public static bool GetButtonReleased(int button) => GetButtonReleased((UnityEngine.InputSystem.LowLevel.MouseButton)button);
 
         #endregion
 

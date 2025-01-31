@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 
 namespace GLU.Input.Examples
@@ -29,14 +30,14 @@ namespace GLU.Input.Examples
             transform.position += (Vector3)Keyboard.Navigation * Time.deltaTime * 2f;
 
             // Check if the space key was pressed this frame
-            if (Keyboard.GetKeyPressed(KeyId.Space))
+            if (Keyboard.GetKeyPressed(Key.Space))
             {
                 // Loop through the colors
                 _renderer.color = COLORS[++_currentColor % COLORS.Length];
             }
             
             // Check if the R key was pressed this frame
-            if (Keyboard.GetKeyPressed(KeyId.R))
+            if (Keyboard.GetKeyPressed(Key.R))
             {
                 // Reset position to (0, 0)
                 transform.position = Vector2.zero;

@@ -1,10 +1,10 @@
-﻿# enum KeyId
+﻿# enum Key
 *namespace:* [GLU.Input.Keyboard](../keyboard.md)
 
 ---
 ***Syntax***
 ```csharp
-public enum KeyId
+public enum Key
 ```
 
 ## Fields
