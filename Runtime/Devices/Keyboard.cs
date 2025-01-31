@@ -15,16 +15,22 @@ namespace GLU.Input
         /// Returns whether the given key is currently being pressed
         /// </summary>
         public static bool GetKey(Key key) => Events.Try(() => Device[key].isPressed, EVENT_ERROR);
+        /// <inheritdoc cref="GetKey(UnityEngine.InputSystem.Key)"/>
+        public static bool GetKey(KeyId key) => GetKey((Key) key);
         
         /// <summary>
         /// Returns whether the given key was pressed in the current frame
         /// </summary>
         public static bool GetKeyPressed(Key key) => Events.Try(() => Device[key].wasPressedThisFrame, EVENT_ERROR);
+        /// <inheritdoc cref="GetKeyPressed(UnityEngine.InputSystem.Key)"/>
+        public static bool GetKeyPressed(KeyId key) => GetKeyPressed((Key) key);
         
         /// <summary>
         /// Returns whether the given key was released in the current frame
         /// </summary>
         public static bool GetKeyReleased(Key key) => Events.Try(() => Device[key].wasReleasedThisFrame, EVENT_ERROR);
+        /// <inheritdoc cref="GetKeyReleased(UnityEngine.InputSystem.Key)"/>
+        public static bool GetKeyReleased(KeyId key) => GetKeyReleased((Key) key);
 
         #endregion
 
