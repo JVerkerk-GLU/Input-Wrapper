@@ -1,0 +1,11 @@
+﻿{
+  "name": "com.glu.input-wrapper",
+  "version": "1.0.0",
+  "displayName": "GLU - Input Wrapper",
+  "description": "A simple input wrapper that allows the new Input Manager to be used with prompt based interaction",
+  "unity": "2019.4",
+  "hideInEditor": false,
+  "dependencies": {
+    "com.unity.inputsystem": "1.12.0"
+  }
+}

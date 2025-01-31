@@ -25,7 +25,7 @@ The wrapper is designed to support Keyboard and Mouse as well as Gamepad interac
 All input is handled in a polling-based method, allowing the user to use these methods in Update loops like the legacy input system.
 
 ## Getting Started
-To install this project, you use the [latest release](https://github.com/JVerkerk-GLU/Input-Wrapper/releases) package as provided within this repository.
+To install this wrapper, you use the [latest release](https://github.com/JVerkerk-GLU/Input-Wrapper/releases) package as provided within this repository.
 
 ## Documentation
 The different types of Input devices are described in the following files, including the available properties and methods.
