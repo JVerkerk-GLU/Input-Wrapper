@@ -1,6 +1,7 @@
 ﻿# bool GetKeyReleased(KeyId key)
-*namespace:* [GLU.Keyboard](../keyboard.md)
+*namespace:* [GLU.Input.Keyboard](../keyboard.md)
 
+---
 ***Syntax***
 ```csharp
 public static bool GetKeyReleased(KeyId key)

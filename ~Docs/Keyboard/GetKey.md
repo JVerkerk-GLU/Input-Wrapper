@@ -1,6 +1,7 @@
-﻿# bool GetKey(EKey key)
-*namespace:* [GLU.Keyboard](../keyboard.md)
+﻿# bool GetKey(KeyId key)
+*namespace:* [GLU.Input.Keyboard](../keyboard.md)
 
+---
 ***Syntax***
 ```csharp
 public static bool GetKey(KeyId key)

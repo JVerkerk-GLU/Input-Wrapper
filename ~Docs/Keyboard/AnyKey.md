@@ -1,6 +1,7 @@
 ﻿# bool AnyKey()
-*namespace:* [GLU.Keyboard](../keyboard.md)
+*namespace:* [GLU.Input.Keyboard](../keyboard.md)
 
+---
 ***Syntax***
 ```csharp
 public static bool AnyKey()

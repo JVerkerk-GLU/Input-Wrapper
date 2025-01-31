@@ -33,6 +33,8 @@ namespace GLU.Input
             ButtonControl control = ParseButton(button);
             return control.isPressed;
         }
+        /// <inheritdoc cref="GetButton(UnityEngine.InputSystem.LowLevel.MouseButton)"/>
+        public static bool GetButton(MouseButtonId button) => GetButton((MouseButton)button);
         
         /// <summary>
         /// Returns whether the given mouse button was pressed during the current frame
@@ -42,6 +44,8 @@ namespace GLU.Input
             ButtonControl control = ParseButton(button);
             return control.wasPressedThisFrame;
         }
+        /// <inheritdoc cref="GetButtonPressed(UnityEngine.InputSystem.LowLevel.MouseButton)"/>
+        public static bool GetButtonPressed(MouseButtonId button) => GetButtonPressed((MouseButton)button);
         
         /// <summary>
         /// Returns whether the given mouse button was released during the current frame
@@ -51,7 +55,18 @@ namespace GLU.Input
             ButtonControl control = ParseButton(button);
             return control.wasReleasedThisFrame;
         }
+        /// <inheritdoc cref="GetButtonReleased(UnityEngine.InputSystem.LowLevel.MouseButton)"/>
+        public static bool GetButtonReleased(MouseButtonId button) => GetButtonReleased((MouseButton)button);
 
+        #endregion
+
+        #region --- Scroll ---
+
+        /// <summary>
+        /// Returns the scroll delta of vertical scrolling where the value is clamped between 1 and -1, 1 being up and -1 being down
+        /// </summary>
+        public static float Scroll => Device.scroll.ReadValue().normalized.y;
+        
         #endregion
 
         #region --- Position ---

@@ -1,9 +1,10 @@
 ﻿# Device - Keyboard
+*Namespace:* [GLU.Input](../README.md)
 
+---
 A wrapper around keyboard input allowing the polling of key presses.
 
 ## Static Methods
-
 <table>
     <tbody>
         <tr>
@@ -34,7 +35,6 @@ A wrapper around keyboard input allowing the polling of key presses.
 </table>
 
 ## Static Properties
-
 <table>
     <tbody>
         <tr>

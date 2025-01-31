@@ -1,6 +1,7 @@
 ﻿# bool GetKeyPressed(KeyId key)
-*namespace:* [GLU.Keyboard](../keyboard.md)
+*namespace:* [GLU.Input.Keyboard](../keyboard.md)
 
+---
 ***Syntax***
 ```csharp
 public static bool GetKeyPressed(KeyId key)

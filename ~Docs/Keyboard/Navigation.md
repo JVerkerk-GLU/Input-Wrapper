@@ -1,6 +1,7 @@
 ﻿# Vector2 Navigation
-*namespace:* [GLU.Keyboard](../keyboard.md)
+*namespace:* [GLU.Input.Keyboard](../keyboard.md)
 
+---
 ***Syntax***
 ```csharp
 public static Vector2 Navigation
