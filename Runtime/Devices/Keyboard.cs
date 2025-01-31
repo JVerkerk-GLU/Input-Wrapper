@@ -7,35 +7,24 @@ namespace GLU.Input
     public static class Keyboard
     {
         private static UnityEngine.InputSystem.Keyboard Device => UnityEngine.InputSystem.Keyboard.current ?? throw new NullReferenceException("[<color=#ff0000>There doesn't seem to be a keyboard present</color>]");
-        
-        private static bool Try(Func<bool> callback)
-        {
-            try
-            {
-                return callback();
-            }
-            catch (Exception e)
-            {
-                throw new ArgumentOutOfRangeException($"[<color=#ff0000>Invalid 'Key' value</color>]", e);
-            }
-        }
+        private const string EVENT_ERROR = "Invalid 'Key' value";
 
         #region --- Key ---
 
         /// <summary>
         /// Returns whether the given key is currently being pressed
         /// </summary>
-        public static bool GetKey(Key key) => Try(() => Device[key].isPressed);
+        public static bool GetKey(Key key) => Events.Try(() => Device[key].isPressed, EVENT_ERROR);
         
         /// <summary>
         /// Returns whether the given key was pressed in the current frame
         /// </summary>
-        public static bool GetKeyPressed(Key key) => Try(() => Device[key].wasPressedThisFrame);
+        public static bool GetKeyPressed(Key key) => Events.Try(() => Device[key].wasPressedThisFrame, EVENT_ERROR);
         
         /// <summary>
         /// Returns whether the given key was released in the current frame
         /// </summary>
-        public static bool GetKeyReleased(Key key) => Try(() => Device[key].wasReleasedThisFrame);
+        public static bool GetKeyReleased(Key key) => Events.Try(() => Device[key].wasReleasedThisFrame, EVENT_ERROR);
 
         #endregion
 
@@ -63,7 +52,7 @@ namespace GLU.Input
         /// <summary>
         /// Returns a Vector2 based on the commonly used WASD and arrow key navigation
         /// </summary>
-        public static Vector2 GetAxis() => new Vector2(
+        public static Vector2 Navigation => new Vector2(
             (Device.rightArrowKey.isPressed || Device.dKey.isPressed ? 1 : 0) - // Right
             (Device.leftArrowKey.isPressed || Device.aKey.isPressed ? 1 : 0), // Left
 

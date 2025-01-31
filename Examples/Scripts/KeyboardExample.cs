@@ -27,7 +27,7 @@ namespace GLU.Input.Examples
         private void Update()
         {
             // Change the position based on the current WASD or Arrow key input
-            transform.position += (Vector3)Keyboard.GetAxis() * Time.deltaTime * 2f;
+            transform.position += (Vector3)Keyboard.Navigation * Time.deltaTime * 2f;
 
             // Check if the space key was pressed this frame
             if (Keyboard.GetKeyPressed(Key.Space))
